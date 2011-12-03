@@ -84,3 +84,13 @@ $base: #3376D7;
     text-align: right;
   }
 }
+
+a {
+  color: $base;
+  text-decoration: none;
+}
+
+a:hover {
+  color: darken($base, 10%);
+  text-decoration: underline;
+}

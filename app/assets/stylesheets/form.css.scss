@@ -25,16 +25,32 @@ $base: #3376D7;
   margin: 0;
 }
 
-.actions {
-  input[type="submit"] {
-    padding: 5px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    color: white;
-    background-color: $base;
-    border: 1px solid #cccccc;
-    text-shadow: 0px 0px 1px black;
-    cursor: pointer;
-  }
+input[type="submit"], .button {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  color: white;
+  background-color: $base;
+  border: 1px solid #cccccc;
+  text-shadow: 0px 0px 1px black;
+  cursor: pointer;
+  width: 125px;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+
+input[type="submit"] {
+  padding: 5px;
+  height: 30px;
+}
+
+.button {
+  padding: 5px;
+  height: 20px;
+}
+
+.button:hover {
+  color: white;
+  text-decoration: none;
 }

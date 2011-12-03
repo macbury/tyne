@@ -1,23 +1,12 @@
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<div id="tickets">
 <% @tickets.each do |ticket| %>
-  <tr>
-    <td><%= ticket.title %></td>
-    <td><%= ticket.description %></td>
-    <td><%= link_to 'Show', ticket %></td>
-    <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
-    <td><%= link_to 'Destroy', ticket, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+  <div class="ticket" data-id="<%= ticket.id %>">
+    <div class="title"><%= link_to ticket.title, ticket %></div>
+    <div class="description"><%= ticket.description %></div>
+  </div>
 <% end %>
-</table>
+</div>
 
 <br />
 
-<%= link_to 'New Ticket', new_ticket_path %>
+<%= link_to 'New Ticket', new_ticket_path, :class => "button" %>
