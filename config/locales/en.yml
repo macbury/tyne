@@ -2,4 +2,12 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  page:
+    info:
+      tickets:
+        index: "List of tickets"
+        new: "Create a new ticket"
+    description:
+      tickets:
+        index: "Displays the list of all of your tickets."
+        new: "Raise a new ticket for the current project."

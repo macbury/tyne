@@ -1,0 +1,18 @@
+#error_explanation {
+  color: red;
+
+  h2 {
+    color: darken(red, 10%);
+  }
+
+  ul {
+    margin-left: 25px;
+  }
+}
+
+.field_with_errors {
+  input, textarea {
+    border: 1px solid darken(red, 10%);
+    background-color: lighten(red, 48%);
+  }
+}
