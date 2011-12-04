@@ -2,6 +2,9 @@ require 'spec_helper'
 
 
 describe TicketsController do
+  before :each do
+    subject.stub(:require_login).and_return(:foo)
+  end
 
   def valid_attributes
     @project = Project.create({ :abbreviation => "F", :name => "foo" })

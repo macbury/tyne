@@ -2,6 +2,10 @@ require 'spec_helper'
 
 describe ProjectsController do
 
+  before :each do
+    subject.stub(:require_login).and_return(:foo)
+  end
+
   def valid_attributes
     { :abbreviation => "T", :name => "Test"}
   end
