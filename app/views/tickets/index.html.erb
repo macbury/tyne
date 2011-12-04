@@ -1,8 +1,16 @@
 <div id="tickets">
 <% @tickets.each do |ticket| %>
   <div class="ticket" data-id="<%= ticket.id %>">
-    <div class="title"><%= link_to ticket.title, ticket %></div>
-    <div class="description"><%= ticket.description %></div>
+    <div class="header">
+      <span class="id"><%= link_to ticket.id, edit_ticket_path(ticket) %></span>
+      <span class="title"><%= link_to ticket.title, edit_ticket_path(ticket) %></span>
+    </div>
+    <div class="description"><%= textile_to_html(ticket.description) %></div>
+    <div class="tags">
+      <%= due_tag(ticket.due_date) if ticket.due_date %>
+
+      <br style="clear: left;" />
+    </div>
   </div>
 <% end %>
 </div>

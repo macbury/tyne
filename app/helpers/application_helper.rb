@@ -13,4 +13,8 @@ module ApplicationHelper
   def description
     I18n.t("page.description.#{params[:controller]}.#{params[:action]}")
   end
+
+  def textile_to_html(textile)
+    RedCloth.new(textile).to_html.html_safe
+  end
 end

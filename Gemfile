@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '3.1.3'
 gem 'therubyracer'
 gem 'inherited_resources'
+gem 'RedCloth'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -34,4 +35,7 @@ gem 'jquery-rails'
 group :test, :development do
   gem "rspec-rails", "~> 2.6"
   gem "shoulda-matchers"
+  gem 'pry'
+  gem 'capybara'
+  gem 'simplecov'
 end

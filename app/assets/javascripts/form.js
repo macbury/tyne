@@ -1,3 +1,6 @@
 $(document).ready(function() {
-  $(".date input").datepicker();
+  var settings = {
+    dateFormat: 'yy-mm-dd'
+  };
+  $(".date input").datepicker(settings);
 });
