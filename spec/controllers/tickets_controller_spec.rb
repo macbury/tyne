@@ -4,7 +4,9 @@ require 'spec_helper'
 describe TicketsController do
 
   def valid_attributes
-    { :title => "foo", :ticket_type => TicketType.new( { :name => "Bug" } )}
+    @project = Project.create({ :abbreviation => "F", :name => "foo" })
+    @type = TicketType.create({ :name => "foo" })
+    { :title => "foo", :ticket_type_id => @type.id, :project_id => @project.id}
   end
 
   describe "GET index" do
@@ -54,7 +56,7 @@ describe TicketsController do
 
       it "redirects to the created ticket" do
         post :create, :ticket => valid_attributes
-        response.should redirect_to(Ticket.last)
+        response.should redirect_to(edit_ticket_url(Ticket.last))
       end
 
       it "should display the form again if the form has been submitted with invalid arguments" do
@@ -66,8 +68,6 @@ describe TicketsController do
 
     describe "with invalid params" do
       it "assigns a newly created but unsaved ticket as @ticket" do
-        # Trigger the behavior that occurs when invalid params are submitted
-        Ticket.any_instance.stub(:save).and_return(false)
         post :create, :ticket => {}
         assigns(:ticket).should be_a_new(Ticket)
       end
@@ -83,19 +83,19 @@ describe TicketsController do
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
         Ticket.any_instance.should_receive(:update_attributes).with({'these' => 'params'})
-        put :update, :id => ticket.id, :ticket => {'these' => 'params'}
+        put :update, :id => ticket.id, :ticket => {'these' => 'params' }, :actions => { :event => "" }
       end
 
       it "assigns the requested ticket as @ticket" do
         ticket = Ticket.create! valid_attributes
-        put :update, :id => ticket.id, :ticket => valid_attributes
+        put :update, :id => ticket.id, :ticket => valid_attributes, :actions => { :event => "" }
         assigns(:ticket).should eq(ticket)
       end
 
       it "redirects to the ticket" do
         ticket = Ticket.create! valid_attributes
-        put :update, :id => ticket.id, :ticket => valid_attributes
-        response.should redirect_to(ticket)
+        put :update, :id => ticket.id, :ticket => valid_attributes, :actions => { :event => "" }
+        response.should redirect_to(edit_ticket_url(ticket))
       end
     end
 
@@ -104,7 +104,7 @@ describe TicketsController do
         ticket = Ticket.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Ticket.any_instance.stub(:save).and_return(false)
-        put :update, :id => ticket.id.to_s, :ticket => {}
+        put :update, :id => ticket.id.to_s, :ticket => {}, :actions => { :event => "" }
         assigns(:ticket).should eq(ticket)
       end
     end

@@ -8,6 +8,7 @@ class TicketsController < InheritedResources::Base
 
   def create
     create! do |success, failure|
+      failure.html { render :action => "new" }
       success.html { redirect_to_ticket }
     end
   end
@@ -18,6 +19,8 @@ class TicketsController < InheritedResources::Base
       @ticket.fire_state_event(event.to_sym) unless event.empty?
 
       success.html { redirect_to_ticket }
+
+      failure.html { @ticket = params[:ticket] }
     end
   end
 

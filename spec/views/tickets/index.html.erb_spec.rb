@@ -2,14 +2,17 @@ require 'spec_helper'
 
 describe "tickets/index.html.erb" do
   before(:each) do
+    @project = Project.create( { :abbreviation => "f", :name => "foo" })
     assign(:tickets, [
       stub_model(Ticket,
         :title => "Title",
-        :description => "MyText"
+        :description => "MyText",
+        :project_id => @project.id
       ),
       stub_model(Ticket,
         :title => "Title",
-        :description => "MyText"
+        :description => "MyText",
+        :project_id => @project.id
       )
     ])
   end
