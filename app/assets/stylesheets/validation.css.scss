@@ -11,8 +11,13 @@
 }
 
 .field_with_errors {
-  input[type="text"], textarea {
+  input[type="text"], select, textarea {
     border: 1px solid darken(red, 10%);
     background-color: lighten(red, 48%);
+  }
+
+  label.message {
+    color: red;
+    margin-left: 5px;
   }
 }
