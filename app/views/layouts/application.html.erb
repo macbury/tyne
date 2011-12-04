@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
   <%= yield :head %>
 
-  <%= javascript_tag "var flash_errors = \"#{flash[:errors]}\";" if flash[:errors] %>
+  <%= javascript_tag "var flash_error = \"#{flash[:error]}\";" if flash[:error] %>
   <%= javascript_tag "var flash_notice = \"#{flash[:notice]}\";" if flash[:notice] %>
   <%= javascript_tag "var flash_warning = \"#{flash[:warning]}\";" if flash[:warning] %>
 </head>

@@ -1,6 +1,6 @@
 $(document).ready(function() {
-  if (typeof flash_errors != 'undefined') {
-    flash(flash_errors, "error");
+  if (typeof flash_error != 'undefined') {
+    flash(flash_error, "error");
   }
 
   if (typeof flash_warning != 'undefined') {
