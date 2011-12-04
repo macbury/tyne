@@ -26,7 +26,7 @@ class Ticket < ActiveRecord::Base
     end
 
     event :task_is_invalid do
-      transition :new => :invalid
+      transition :open => :invalid
     end
 
     state all - [:done, :invalid] do
