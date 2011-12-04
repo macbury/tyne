@@ -17,4 +17,14 @@ module ApplicationHelper
   def textile_to_html(textile)
     RedCloth.new(textile).to_html.html_safe
   end
+
+  def trim(text, after_lines)
+    lines = text.split("\n")
+
+    if lines.count <= after_lines
+      lines.join("\n")
+    else
+      "#{lines[0, after_lines].join("\n")}..."
+    end
+  end
 end

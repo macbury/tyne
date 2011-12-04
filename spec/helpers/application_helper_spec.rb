@@ -43,4 +43,18 @@ describe ApplicationHelper do
       helper.description.should == "test"
     end
   end
+
+  describe :trim do
+    it "should return the text if the text contains less or equal lines" do
+      text = "Lorem\nIpsum"
+
+      helper.trim(text, 3).should == text
+    end
+
+    it "should trim the text after x lines" do
+      text = "Text\nwith\n\more\nlines"
+
+      helper.trim(text, 3).should == "Text\nwith\nmore..."
+    end
+  end
 end
