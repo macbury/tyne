@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111204135711) do
+ActiveRecord::Schema.define(:version => 20111204191212) do
+
+  create_table "authorizations", :force => true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "projects", :force => true do |t|
     t.string   "abbreviation"
@@ -36,6 +44,13 @@ ActiveRecord::Schema.define(:version => 20111204135711) do
     t.integer  "ticket_type_id"
     t.string   "state",          :default => "open"
     t.integer  "project_id"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

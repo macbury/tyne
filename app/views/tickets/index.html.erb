@@ -22,4 +22,9 @@
     </div>
   </div>
 <% end %>
+
+<% if @tickets.empty? %>
+  <p>Congratulations, you don't have any bugs.</p>
+<% end %>
+
 </div>
