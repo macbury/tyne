@@ -7,6 +7,10 @@ $base: #3376D7;
   font-family: "Lucida Grande", "Lucida Mac", Tahoma, Arial, Verdana, Helvetica, Sans-Serif;
 }
 
+body {
+  width: 100%;
+}
+
 #header {
   background-color: #ffffff;
   -webkit-box-shadow: 5px 5px 5px #ccc;
@@ -68,13 +72,12 @@ $base: #3376D7;
   min-height: 400px;
 
   #left {
-    float:left;
     width: 200px;
   }
 
   #main {
-    float: left;
-    margin: 10px;
+    position: relative;
+    margin-right: 10px;
   }
 }
 

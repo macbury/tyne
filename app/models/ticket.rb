@@ -1,7 +1,8 @@
 class Ticket < ActiveRecord::Base
-  validates_presence_of :title, :ticket_type
+  validates_presence_of :title, :ticket_type_id, :project_id
 
   belongs_to :ticket_type
+  belongs_to :project
 
   state_machine :state, :initial => :open do
     event :start_working do

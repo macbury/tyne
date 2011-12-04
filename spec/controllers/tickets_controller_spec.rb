@@ -4,7 +4,7 @@ require 'spec_helper'
 describe TicketsController do
 
   def valid_attributes
-    { :title => "foo"}
+    { :title => "foo", :ticket_type => TicketType.new( { :name => "Bug" } )}
   end
 
   describe "GET index" do

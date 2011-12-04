@@ -11,26 +11,46 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div class="field date">
-    <%= f.label :due_date %><br />
-    <%= f.text_field :due_date %>
-  </div>
-  <div class="field">
-    <%= f.label :ticket_type %><br />
-    <%= f.collection_select :ticket_type_id, TicketType.all, :id, :name, :prompt => "Please select a type" %>
-  </div>
-  <div class="field">
-    <%= f.label :event, "State:" %><br />
-    <%= collection_select "actions", :event, @ticket.available_transitions, :last, :first %>
-  </div>
+  <fieldset>
+    <legend>Title</legend>
+    <div class="field title">
+      <%= f.text_field :title %>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Details</legend>
+    <div class="fleft half">
+      <div class="field date">
+        <%= f.label :due_date %>
+        <%= f.text_field :due_date %>
+      </div>
+      <div class="field">
+        <%= f.label :project %>
+        <%= f.collection_select :project_id, Project.all, :id, :name, :prompt => "Please select a type" %>
+      </div>
+    </div>
+
+    <div class="fleft half">
+      <div class="field">
+        <%= f.label :ticket_type %>
+        <%= f.collection_select :ticket_type_id, TicketType.all, :id, :name, :prompt => "Please select a type" %>
+      </div>
+      <div class="field">
+        <%= f.label :event, "State:" %>
+        <%= collection_select "actions", :event, @ticket.available_transitions, :last, :first %>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Description</legend>
+    <p class="note">Textile markup is enabled.</p>
+    <div class="field description">
+      <%= f.text_area :description %>
+    </div>
+  </fieldset>
+
   <div class="actions">
     <%= f.submit %>
   </div>

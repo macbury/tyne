@@ -8,8 +8,10 @@ en:
         index: "List of tickets"
         create: "Create a new ticket"
         new: "Create a new ticket"
+        edit: "Edit an existing new ticket"
     description:
       tickets:
         index: "Displays the list of all of your tickets."
         new: "Raise a new ticket for the current project."
         create: "Raise a new ticket for the current project."
+        edit: "Change the details for an existing ticket."

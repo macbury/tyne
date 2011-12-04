@@ -6,10 +6,23 @@ class TicketsController < InheritedResources::Base
     end
   end
 
+  def create
+    create! do |success, failure|
+      success.html { redirect_to_ticket }
+    end
+  end
+
   def update
     update! do |success, failure|
       event = params[:actions][:event]
       @ticket.fire_state_event(event.to_sym) unless event.empty?
+
+      success.html { redirect_to_ticket }
     end
+  end
+
+  private
+  def redirect_to_ticket
+    redirect_to edit_ticket_url(@ticket)
   end
 end

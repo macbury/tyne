@@ -1,8 +1,9 @@
 .tag {
-  display: block;
-  width: 100px;
-  height: 20px;
-  background-color: #333333;
+  min-width: 80px;
+  height: 15px;
+  border: 1px solid #cccccc;
+  background: -moz-linear-gradient(top, #333333, darken(#333333, 10%));
+  background: -webkit-gradient(linear, center top, center bottom, from(#333333), to(darken(#333333, 10%)));
   color: white;
   float: left;
   text-align: center;
@@ -12,26 +13,31 @@
   -webkit-border-radius: 4px;
      -moz-border-radius: 4px;
           border-radius: 4px;
-  font-size: 8pt;
+  font-size: 7pt;
 }
 
 .tag.today {
-  background-color: darken(red, 10%);
+  background: -moz-linear-gradient(top, red, darken(red, 10%));
+  background: -webkit-gradient(linear, center top, center bottom, from(red), to(darken(red, 10%)));
 }
 
 .tag.today, .tag.bug {
-  background-color: darken(red, 5%);
+  background: -webkit-gradient(linear, left top, left bottom, from(red), to(darken(red, 10%)));
+  background: -moz-linear-gradient(top, red, darken(red, 10%));
 }
 
 .tag.enhance_request {
-  background-color: darken(blue, 5%);
+  background: -webkit-gradient(linear, left top, left bottom, from(blue), to(darken(blue, 10%)));
+  background: -moz-linear-gradient(top, blue, darken(blue, 10%));
 }
 
 .tag.feature {
-  background-color: darken(green, 5%);
+  background: -webkit-gradient(linear, left top, left bottom, from(green), to(darken(green, 10%)));
+  background: -moz-linear-gradient(top, green, darken(green, 10%));
 }
 
 .tag.open {
-  background-color: darken(white, 10%);
+  background: -webkit-gradient(linear, left top, left bottom, from(darken(white, 5%)), to(darken(white, 10%)));
+  background: -moz-linear-gradient(top, darken(white, 5%), darken(white, 10%));
   color: darken(white, 20%);
 }

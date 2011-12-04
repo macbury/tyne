@@ -1,0 +1,32 @@
+.flash {
+  z-index: 10;
+  position: absolute;
+  height: 30px;
+  color: white;
+  text-shadow: 2px 2px 2px #333333;
+  text-align: center;
+  display: block;
+  width: 80%;
+  margin-left: 10%;
+  -webkit-border-bottom-right-radius: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  opacity: 0.8;
+  padding-top: 5px;
+}
+
+.flash.notice {
+  background-color: #333333;
+  border-bottom: 1px solid darken(#333333, 10%);
+}
+.flash.warning {
+  background-color: #ffff00;
+  border-bottom: 1px solid darken(#ffff00, 10%);
+}
+.flash.error {
+  background-color: red;
+  border-bottom: 1px solid darken(red, 10%);
+}

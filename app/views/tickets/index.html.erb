@@ -9,7 +9,7 @@
 <% @tickets.each do |ticket| %>
   <div class="ticket" data-id="<%= ticket.id %>">
     <div class="header">
-      <span class="id"><%= link_to ticket.id, edit_ticket_path(ticket) %></span>
+      <span class="id"><%= link_to "#{ticket.project.abbreviation}-#{ticket.id}", edit_ticket_path(ticket) %></span>
       <span class="title"><%= link_to ticket.title, edit_ticket_path(ticket) %></span>
       <span class="description"><%= textile_to_html(trim(ticket.description, 3)) %></span>
     </div>

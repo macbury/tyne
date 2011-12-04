@@ -20,6 +20,6 @@ module TicketsHelper
     tags = ["tag", ticket.state]
     display_text = ticket.state
 
-    %(<span class="#{tags.join(" ")}" title="Type: #{display_text}">#{display_text}</span>).html_safe
+    %(<span class="#{tags.join(" ")}" title="State: #{display_text}">#{display_text}</span>).html_safe
   end
 end
