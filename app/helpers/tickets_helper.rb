@@ -15,4 +15,11 @@ module TicketsHelper
 
     %(<span class="#{tags.join(" ")}" title="Type: #{display_text}">#{display_text}</span>).html_safe
   end
+
+  def state_tag(ticket)
+    tags = ["tag", ticket.state]
+    display_text = ticket.state
+
+    %(<span class="#{tags.join(" ")}" title="Type: #{display_text}">#{display_text}</span>).html_safe
+  end
 end

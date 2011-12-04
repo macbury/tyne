@@ -30,3 +30,8 @@
 .tag.feature {
   background-color: darken(green, 5%);
 }
+
+.tag.open {
+  background-color: darken(white, 10%);
+  color: darken(white, 20%);
+}

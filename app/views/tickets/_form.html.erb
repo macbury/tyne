@@ -27,6 +27,10 @@
     <%= f.label :ticket_type %><br />
     <%= f.collection_select :ticket_type_id, TicketType.all, :id, :name, :prompt => "Please select a type" %>
   </div>
+  <div class="field">
+    <%= f.label :event, "State:" %><br />
+    <%= collection_select "actions", :event, @ticket.available_transitions, :last, :first %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
