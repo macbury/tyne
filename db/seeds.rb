@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+["Bug", "Enhance request", "Feature"].each do |type|
+  TicketType.create({ :name => type })
+end

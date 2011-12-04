@@ -11,10 +11,10 @@ describe "tickets/new.html.erb" do
   it "renders new ticket form" do
     render
 
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
     assert_select "form", :action => tickets_path, :method => "post" do
       assert_select "input#ticket_title", :name => "ticket[title]"
       assert_select "textarea#ticket_description", :name => "ticket[description]"
+      assert_select "select#ticket_ticket_type_id", :name => "ticket[tickt_type_id]"
     end
   end
 

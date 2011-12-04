@@ -7,11 +7,26 @@
   float: left;
   text-align: center;
   margin-right: 5px;
+  margin-top: 10px;
+  padding-top: 5px;
   -webkit-border-radius: 4px;
      -moz-border-radius: 4px;
           border-radius: 4px;
+  font-size: 8pt;
 }
 
 .tag.today {
   background-color: darken(red, 10%);
+}
+
+.tag.today, .tag.bug {
+  background-color: darken(red, 5%);
+}
+
+.tag.enhance_request {
+  background-color: darken(blue, 5%);
+}
+
+.tag.feature {
+  background-color: darken(green, 5%);
 }

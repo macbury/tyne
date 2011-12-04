@@ -11,7 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111203233359) do
+ActiveRecord::Schema.define(:version => 20111204021438) do
+
+  create_table "ticket_types", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tickets", :force => true do |t|
     t.string   "title"
@@ -19,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20111203233359) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.date     "due_date"
+    t.integer  "ticket_type_id"
   end
 
 end

@@ -14,6 +14,7 @@ describe "tickets/edit.html.erb" do
     assert_select "form", :action => tickets_path(@ticket), :method => "post" do
       assert_select "input#ticket_title", :name => "ticket[title]"
       assert_select "textarea#ticket_description", :name => "ticket[description]"
+      assert_select "select#ticket_ticket_type_id", :name => "ticket[tickt_type_id]"
     end
   end
 

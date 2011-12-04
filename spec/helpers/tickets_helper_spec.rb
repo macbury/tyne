@@ -12,4 +12,11 @@ describe TicketsHelper do
       end
     end
   end
+
+  describe :type_tag do
+    it "should return a span tag with the ticket type" do
+      type = TicketType.new(:name => "foo")
+      helper.type_tag(type).should == "<span class=\"tag foo\" title=\"Type: foo\">foo</span>"
+    end
+  end
 end

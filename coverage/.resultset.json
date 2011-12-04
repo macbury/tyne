@@ -63,7 +63,7 @@
         1,
         null,
         1,
-        2,
+        4,
         null,
         null,
         null
@@ -218,6 +218,13 @@
         null,
         2,
         null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
         null
       ],
       "/Users/thaar/Documents/dev/tyne/app/controllers/tickets_controller.rb": [
@@ -226,6 +233,15 @@
       ],
       "/Users/thaar/Documents/dev/tyne/app/models/ticket.rb": [
         1,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/Users/thaar/Documents/dev/tyne/app/models/ticket_type.rb": [
+        1,
+        1,
+        null,
         1,
         null
       ],
@@ -238,6 +254,6 @@
         null
       ]
     },
-    "timestamp": 1322962848
+    "timestamp": 1322966091
   }
 }

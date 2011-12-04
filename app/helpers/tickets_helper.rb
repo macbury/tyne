@@ -8,4 +8,11 @@ module TicketsHelper
 
     %(<span class="#{tags.join(" ")}" title="Fixit: #{due_date}">#{display_text}</span>).html_safe
   end
+
+  def type_tag(type)
+    tags = ["tag", type.name.downcase.gsub(" ", "_")]
+    display_text = type.name
+
+    %(<span class="#{tags.join(" ")}" title="Type: #{display_text}">#{display_text}</span>).html_safe
+  end
 end
