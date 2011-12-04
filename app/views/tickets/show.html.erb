@@ -1,13 +1,34 @@
+<h2 class="title"><%= @ticket.title %></h2>
 <p>
-  <b>Title:</b>
-  <%= @ticket.title %>
-</p>
-
-<p>
-  <b>Description:</b>
   <%= textile_to_html(@ticket.description) %>
 </p>
 
+<%= render :partial => "tags", :locals => { :ticket => @ticket } %>
 
+<div id="comments">
+  <% @ticket.comments.each do |comment| %>
+    <div id="comment-<%= comment.id %>" class="comment">
+      <div class="user">
+      </div>
+      <div class="body">
+        <%= textile_to_html(comment.body) %>
+      </div>
+    </div>
+  <% end %>
+
+  <%= form_for(@comment, :validate => true) do |f| %>
+    <fieldset>
+      <legend>Leave a comment:</legend>
+      <%= f.hidden_field :ticket_id %>
+      <div class="field">
+          <%= f.text_area :body %>
+      </div>
+    </fieldset>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>
 <%= link_to 'Edit', edit_ticket_path(@ticket) %> |
 <%= link_to 'Back', tickets_path %>

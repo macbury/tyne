@@ -4,6 +4,8 @@ class Ticket < ActiveRecord::Base
   belongs_to :ticket_type
   belongs_to :project
 
+  has_many :comments
+
   state_machine :state, :initial => :open do
     event :start_working do
       transition [:open, :review, :pending, :test] => :work

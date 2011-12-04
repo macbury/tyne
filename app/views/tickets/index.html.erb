@@ -2,24 +2,20 @@
   <h2>Sidebar</h2>
 <% end %>
 
-<%= link_to 'New Ticket', new_ticket_path, :class => "button" %>
-<br />
+
 
 <div id="tickets">
+  <p><%= @tickets.count %> tickets found for <%= link_to "all projects", projects_path %>:</p>
+  <br />
 <% @tickets.each do |ticket| %>
   <div class="ticket" data-id="<%= ticket.id %>">
     <div class="header">
-      <span class="id"><%= link_to "#{ticket.project.abbreviation}-#{ticket.id}", edit_ticket_path(ticket) %></span>
-      <span class="title"><%= link_to ticket.title, edit_ticket_path(ticket) %></span>
+      <span class="id"><%= link_to "#{ticket.project.abbreviation}-#{ticket.id}", ticket_path(ticket) %></span>
+      <span class="title"><%= link_to ticket.title, ticket_path(ticket) %></span>
       <span class="description"><%= textile_to_html(trim(ticket.description, 3)) %></span>
     </div>
-    <div class="tags">
-      <%= due_tag(ticket.due_date) if ticket.due_date %>
-      <%= type_tag(ticket.ticket_type) if ticket.ticket_type %>
-      <%= state_tag(ticket) %>
 
-      <br style="clear: left;" />
-    </div>
+    <%= render :partial => "tags", :locals => { :ticket => ticket } %>
   </div>
 <% end %>
 

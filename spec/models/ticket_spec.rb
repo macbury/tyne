@@ -5,6 +5,8 @@ describe Ticket do
     it { should validate_presence_of :title }
     it { should validate_presence_of :ticket_type_id }
     it { should validate_presence_of :project_id }
+
+    it { should have_many :comments }
   end
 
   describe :available_transitions do

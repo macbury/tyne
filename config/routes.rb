@@ -3,6 +3,8 @@ Tyne::Application.routes.draw do
 
   resources :tickets
 
+  resources :comments
+
   root :to => "tickets#index"
 
   get '/login', :to => 'sessions#new', :as => :login

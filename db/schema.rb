@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111204191212) do
+ActiveRecord::Schema.define(:version => 20111204225341) do
 
   create_table "authorizations", :force => true do |t|
     t.string   "provider"
@@ -20,6 +20,17 @@ ActiveRecord::Schema.define(:version => 20111204191212) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "comments", :force => true do |t|
+    t.text     "body"
+    t.integer  "user_id"
+    t.integer  "ticket_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["ticket_id"], :name => "index_comments_on_ticket_id"
+  add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
 
   create_table "projects", :force => true do |t|
     t.string   "abbreviation"
