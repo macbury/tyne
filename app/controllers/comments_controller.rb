@@ -1,4 +1,7 @@
 class CommentsController < InheritedResources::Base
+
+  belongs_to :ticket
+
   def create
     @comment = Comment.new(params[:comment])
     @comment.user = User.find(session[:user_id])

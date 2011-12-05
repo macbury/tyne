@@ -16,7 +16,7 @@
     </div>
   <% end %>
 
-  <%= form_for(@comment, :validate => true) do |f| %>
+  <%= form_for([@ticket, @comment], :validate => true) do |f| %>
     <fieldset>
       <legend>Leave a comment:</legend>
       <%= f.hidden_field :ticket_id %>

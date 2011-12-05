@@ -1,9 +1,9 @@
 Tyne::Application.routes.draw do
   resources :projects
 
-  resources :tickets
-
-  resources :comments
+  resources :tickets do
+    resources :comments
+  end
 
   root :to => "tickets#index"
 
