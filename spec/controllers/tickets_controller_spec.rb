@@ -67,7 +67,7 @@ describe TicketsController do
 
         it "redirects to the created ticket" do
           post :create, :ticket => valid_attributes
-          response.should redirect_to(edit_ticket_url(Ticket.last))
+          response.should redirect_to(ticket_url(Ticket.last))
         end
 
         it "should display the form again if the form has been submitted with invalid arguments" do
@@ -106,7 +106,7 @@ describe TicketsController do
         it "redirects to the ticket" do
           ticket = Ticket.create! valid_attributes
           put :update, :id => ticket.id, :ticket => valid_attributes, :actions => { :event => "" }
-          response.should redirect_to(edit_ticket_url(ticket))
+          response.should redirect_to(ticket_url(ticket))
         end
       end
 

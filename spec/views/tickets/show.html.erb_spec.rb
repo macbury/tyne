@@ -6,6 +6,7 @@ describe "tickets/show.html.erb" do
       :title => "Title",
       :description => "MyText"
     ))
+    @comment = assign(:comment, stub_model(Comment))
   end
 
   it "renders attributes in <p>" do

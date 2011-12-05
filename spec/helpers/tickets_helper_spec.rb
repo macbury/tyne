@@ -8,7 +8,7 @@ describe TicketsHelper do
 
     context "due date is today" do
       it "should add a today class" do
-        helper.due_tag(Date.today).should == "<span class=\"tag today\" title=\"Fixit: 2011-12-04\">today</span>"
+        helper.due_tag(Date.today).should == "<span class=\"tag today\" title=\"Fixit: #{Date.today}\">today</span>"
       end
     end
   end
