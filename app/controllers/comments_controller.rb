@@ -8,10 +8,11 @@ class CommentsController < InheritedResources::Base
 
     create! do |success, failure|
       success.html do
-        redirect_to ticket_path(@comment.ticket), :notice => "Your comment has beend saved."
+        redirect_to ticket_path(@comment.ticket), :notice => "Your comment has been saved."
       end
 
       failure.html do
+
         url = tickets_path
         url = ticket_path(@comment.ticket) if @comment.ticket
 
