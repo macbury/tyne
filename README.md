@@ -7,6 +7,7 @@ Tyne is a simple Ruby and JavaScript based ticket system which allows you to eas
 ## Installation
 
 Simply clone this repository and run the following commands:
+
 ```
 bundle install
 bundle exec rake db:migrate
