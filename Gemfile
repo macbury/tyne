@@ -6,7 +6,7 @@ gem 'inherited_resources'
 gem 'RedCloth'
 gem 'client_side_validations'
 gem 'state_machine'
-gem 'omniauth-google-oauth2'
+gem 'omniauth-openid'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
