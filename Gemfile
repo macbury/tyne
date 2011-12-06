@@ -41,4 +41,5 @@ group :test, :development do
   gem 'capybara'
   gem 'simplecov'
   gem 'factory_girl_rails'
+  gem "evergreen", :require => 'evergreen/rails'
 end
