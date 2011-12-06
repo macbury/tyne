@@ -56,6 +56,9 @@ GEM
       multi_json (~> 1.0)
     factory_girl (2.3.2)
       activesupport
+    factory_girl_rails (1.4.0)
+      factory_girl (~> 2.3.0)
+      railties (>= 3.0.0)
     ffi (1.0.11)
     has_scope (0.5.1)
     hashie (1.2.0)
@@ -184,7 +187,7 @@ DEPENDENCIES
   capybara
   client_side_validations
   coffee-rails (~> 3.1.1)
-  factory_girl
+  factory_girl_rails
   inherited_resources
   jquery-rails
   omniauth-openid

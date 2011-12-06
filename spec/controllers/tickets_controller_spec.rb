@@ -15,9 +15,9 @@ describe TicketsController do
     end
 
     def valid_attributes
-      @project = Project.create({ :abbreviation => "F", :name => "foo" })
-      @type = TicketType.create({ :name => "foo" })
-      { :title => "foo", :ticket_type_id => @type.id, :project_id => @project.id}
+      @project = Factory(:project)
+      @type = Factory(:ticket_type)
+      Factory.attributes_for(:ticket).merge({:ticket_type_id => @type.id, :project_id => @project.id})
     end
 
     describe "GET index" do

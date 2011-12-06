@@ -2,13 +2,11 @@ require 'spec_helper'
 
 describe CommentsController do
   def mock_user
-    @mock_user ||= User.create( { :name => "name", :email => "email" } )
+    @mock_user ||= Factory(:user)
   end
 
   def mock_ticket
-    @project ||= Project.create({ :abbreviation => "F", :name => "foo" })
-    @type ||= TicketType.create({ :name => "foo" })
-    @ticket ||= Ticket.create({ :title => "foo", :ticket_type_id => @type.id, :project_id => @project.id})
+    @ticket ||= Factory(:ticket)
   end
 
   before :each do

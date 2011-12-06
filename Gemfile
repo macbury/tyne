@@ -40,5 +40,5 @@ group :test, :development do
   gem 'pry'
   gem 'capybara'
   gem 'simplecov'
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
 end
