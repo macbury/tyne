@@ -13,7 +13,10 @@
       <span class="grayed"><%= textile_to_html(trim(ticket.description, 3)) %></span>
     </div>
 
-    <%= render :partial => "tags", :locals => { :ticket => ticket } %>
+    <div class="bottomline">
+      <span class="comment-count comment-count-<%= ticket.comments.count %>" title="<%= ticket.comments.count %> comments"><%= ticket.comments.count %></span>
+      <%= render :partial => "tags", :locals => { :ticket => ticket } %>
+    </div>
   </div>
 <% end %>
 

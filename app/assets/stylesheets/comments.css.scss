@@ -6,3 +6,20 @@
   border: 1px solid lighten(#cccccc, 10%);
   background-color: lighten(#cccccc, 18%);
 }
+
+.comment-count {
+  @include border-radius(4px);
+  border: 1px solid #cccccc;
+  width: 20px;
+  height: 19px;
+  display: inline-block;
+  text-align: center;
+  background-color: lighten(yellow, 40%);
+  font-weight: bold;
+}
+
+.comment-count-0 {
+  font-weight: normal;
+  background-color: white;
+  color: #cccccc;
+}

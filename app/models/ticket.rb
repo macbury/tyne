@@ -54,5 +54,5 @@ class Ticket < ActiveRecord::Base
     current
   end
 
-  scope :not_completed, :conditions => { :state => ["open", "work", "review", "test"] }
+  scope :not_completed, includes(:comments).includes(:ticket_type).where(:state => ["open", "work", "review", "test"])
 end
