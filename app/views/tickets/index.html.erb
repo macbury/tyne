@@ -10,7 +10,7 @@
     <div class="header">
       <span class="id"><%= link_to "#{ticket.project.abbreviation}-#{ticket.id}", ticket_path(ticket) %></span>
       <span class="title"><%= link_to ticket.title, ticket_path(ticket) %></span>
-      <span class="description"><%= textile_to_html(trim(ticket.description, 3)) %></span>
+      <span class="grayed"><%= textile_to_html(trim(ticket.description, 3)) %></span>
     </div>
 
     <%= render :partial => "tags", :locals => { :ticket => ticket } %>

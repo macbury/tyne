@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :authorizations
   has_many :comments
+  has_many :tickets
 
   validates :name, :email, :presence => true
 

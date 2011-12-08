@@ -13,7 +13,7 @@
 
   <div class="ticket-wrapper">
     <div class="with-author">
-      <%= render :partial => "shared/user" %>
+      <%= render :partial => "shared/user", :object => current_user %>
 
       <div class="ticket box">
         <div class="highlight headline top">
@@ -61,5 +61,4 @@
       </div>
     </div>
   </div>
-</div>
 <% end %>

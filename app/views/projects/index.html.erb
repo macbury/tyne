@@ -1,27 +1,18 @@
-<h1>Listing projects</h1>
-
-<table>
-  <tr>
-    <th>Abbreviation</th>
-    <th>Name</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @projects.each do |project| %>
-  <tr>
-    <td><%= project.abbreviation %></td>
-    <td><%= project.name %></td>
-    <td><%= project.description %></td>
-    <td><%= link_to 'Show', project %></td>
-    <td><%= link_to 'Edit', edit_project_path(project) %></td>
-    <td><%= link_to 'Destroy', project, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Project', new_project_path %>
+<div class="projects box">
+  <div class="highlight headline top">
+    <span class="actions"><%= link_to 'New Project', new_project_path, :class => "button" %></span>
+  </div>
+  <% @projects.each do |project| %>
+    <div id="project-<%= project.id %>" class="project details">
+      <span class="abbreviation">
+        <%= link_to project.abbreviation, project_path(project) %>
+      </span>
+      <span class="name">
+        <%= link_to project.name, project_path(project) %>
+      </span>
+      <span class="grayed"><%= textile_to_html(trim(project.description, 3)) %></span>
+    </div>
+  <% end %>
+  <div class="highlight">
+  </div>
+</div>

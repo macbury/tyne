@@ -1,6 +1,6 @@
 <div class="ticket-wrapper">
   <div class="with-author">
-    <%= render :partial => "shared/user" %>
+    <%= render :partial => "shared/user", :object => @ticket.user %>
 
     <div class="ticket ticket-show box">
       <div class="highlight headline top">
@@ -21,11 +21,13 @@
 
   <% @ticket.comments.each do |comment| %>
     <div class="with-author">
-      <%= render :partial => "shared/user" %>
+      <%= render :partial => "shared/user", :object => comment.user %>
 
       <div id="comment-<%= comment.id %>" class="comment box">
         <div class="highlight top">
-          <p class="description">Tobias Haar wrote:</p>
+          <div class="description">
+            <%= comment.user.name %> wrote:
+          </div>
         </div>
         <div class="body">
           <%= textile_to_html(comment.body) %>
@@ -36,7 +38,7 @@
   <% end %>
 
   <div class="with-author">
-    <%= render :partial => "shared/user" %>
+    <%= render :partial => "shared/user", :object => current_user %>
     <div class="box">
       <%= form_for([@ticket, @comment], :validate => true) do |f| %>
         <div class="highlight top">

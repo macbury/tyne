@@ -11,26 +11,31 @@
     </div>
   <% end %>
 
-  <fieldset>
-    <legend>Details</legend>
-    <div class="field">
-      <%= f.label :abbreviation %><br />
-      <%= f.text_field :abbreviation %>
-    </div>
-    <div class="field">
-      <%= f.label :name %><br />
-      <%= f.text_field :name %>
-    </div>
-  </fieldset>
 
 
-  <fieldset>
-    <legend>Description</legend>
-    <div class="field">
-      <%= f.text_area :description %>
+  <div class="ticket box">
+    <div class="highlight headline top">
+      <div class="field title">
+        <%= f.text_field :name %>
+      </div>
     </div>
-  </fieldset>
-  <div class="actions">
-    <%= f.submit %>
+    <div class="details">
+      <div class="field">
+        <%= f.label :abbreviation %>
+        <%= f.text_field :abbreviation %>
+      </div>
+    </div>
+
+    <div class="body">
+      <p class="note">Textile markup is enabled.</p>
+      <div class="field description">
+        <%= f.text_area :description %>
+      </div>
+    </div>
+    <div class="highlight bottom">
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    </div>
   </div>
 <% end %>

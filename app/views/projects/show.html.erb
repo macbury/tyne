@@ -1,20 +1,13 @@
-<p id="notice"><%= notice %></p>
+<div class="ticket ticket-show box">
+  <div class="highlight headline top">
+    <span class="identifier"><%= "#{@project.abbreviation}" %></span>
+    <span class="title"><%= @project.name %></span>
+    <span class="actions"><%= link_to "Edit", edit_project_path(@project), :class => "button" %></span>
+  </div>
+  <div class="body">
+    <p><%= textile_to_html(@project.description) %></p>
+  </div>
 
-<p>
-  <b>Abbreviation:</b>
-  <%= @project.abbreviation %>
-</p>
-
-<p>
-  <b>Name:</b>
-  <%= @project.name %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @project.description %>
-</p>
-
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+  <div class="highlight bottom">
+  </div>
+</div>

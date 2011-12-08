@@ -6,6 +6,13 @@ class TicketsController < InheritedResources::Base
     end
   end
 
+  def create
+    @ticket = Ticket.new(params[:ticket])
+    @ticket.user = current_user
+
+    create!
+  end
+
   def show
     show! do
       @comment = Comment.new({ :ticket => @ticket })
