@@ -2,7 +2,7 @@
   <div class="with-author">
     <%= render :partial => "shared/user", :object => @ticket.user %>
 
-    <div class="ticket ticket-show box">
+    <div class="ticket show box">
       <div class="highlight headline top">
         <span class="identifier"><%= "#{@ticket.project.abbreviation}-#{@ticket.id}" %></span>
         <span class="title"><%= @ticket.title %></span>

@@ -57,4 +57,14 @@ describe ApplicationHelper do
       helper.trim(text, 3).should == "Text\nwith\nmore..."
     end
   end
+
+  describe :avatar_url do
+    before :each do
+      @user = Factory(:user)
+    end
+
+    it "should return a url to gravatar" do
+      helper.avatar_url(@user).should =~ /http:\/\/gravatar.com\/avatar\/(.*).png\?s=48&d=(.*)/
+    end
+  end
 end

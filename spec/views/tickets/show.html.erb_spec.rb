@@ -2,17 +2,14 @@ require 'spec_helper'
 
 describe "tickets/show.html.erb" do
   before(:each) do
-    @ticket = assign(:ticket, stub_model(Ticket,
-      :title => "Title",
-      :description => "MyText"
-    ))
+    view.stub(:current_user).and_return(Factory(:user))
+    @ticket = Factory(:ticket)
     @comment = assign(:comment, stub_model(Comment))
   end
 
   it "renders attributes in <p>" do
     render
 
-    rendered.should match(/Title/)
-    rendered.should match(/MyText/)
+    rendered.should have_selector(".ticket")
   end
 end

@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe "tickets/edit.html.erb" do
   before(:each) do
+    view.stub(:current_user).and_return(Factory(:user))
     @ticket = assign(:ticket, stub_model(Ticket,
       :title => "MyString",
       :description => "MyText"
