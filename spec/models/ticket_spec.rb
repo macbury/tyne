@@ -1,6 +1,10 @@
 require 'spec_helper'
 
 describe Ticket do
+  describe :fields do
+    it { should have_db_column :story_points }
+  end
+
   describe :validations do
     it { should validate_presence_of :title }
     it { should validate_presence_of :ticket_type_id }
