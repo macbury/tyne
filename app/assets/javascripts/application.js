@@ -9,8 +9,3 @@
 //= require jquery_ujs
 //= require_tree .
 //= require rails.validations
-
-
-$(document).ready(function() {
-  Notifier.initialize();
-});

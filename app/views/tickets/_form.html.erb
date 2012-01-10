@@ -43,6 +43,12 @@
               <%= collection_select "actions", :event, @ticket.available_transitions, :last, :first %>
             </div>
           </div>
+          <div class="fleft half">
+            <div class="field">
+              <%= f.label :story_points %>
+              <%= f.text_field :story_points %>
+            </div>
+          </div>
 
           <br style="clear: left;" />
         </div>
