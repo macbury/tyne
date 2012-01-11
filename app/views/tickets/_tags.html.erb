@@ -2,6 +2,7 @@
   <%= due_tag(ticket.due_date) if ticket.due_date %>
   <%= type_tag(ticket.ticket_type) if ticket.ticket_type %>
   <%= state_tag(ticket) %>
+  <%= default_tag(ticket.story_points) %>
 
   <br style="clear: left;" />
 </span>

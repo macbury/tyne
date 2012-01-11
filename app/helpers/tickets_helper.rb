@@ -22,4 +22,12 @@ module TicketsHelper
 
     %(<span class="#{tags.join(" ")}" title="State: #{display_text}">#{display_text}</span>).html_safe
   end
+
+  def default_tag(value)
+    return unless value
+    tags = ["tag", value.to_s.downcase.gsub(" ", "_")]
+    display_text = value
+
+    %(<span class="#{tags.join(" ")}" title="#{display_text}">#{display_text}</span>).html_safe
+  end
 end

@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(:version => 20120110150916) do
     t.string   "state",          :default => "open"
     t.integer  "project_id"
     t.integer  "user_id"
-    t.integer  "story_points"
+    t.decimal  "story_points"
   end
 
   create_table "users", :force => true do |t|
