@@ -19,4 +19,11 @@ describe TicketsHelper do
       helper.type_tag(type).should == "<span class=\"tag foo\" title=\"Type: foo\">foo</span>"
     end
   end
+
+  describe :default_tag do
+    it "should return a span tag with just the value" do
+      value = "foo"
+      helper.default_tag(value).should =~ /<span.*>foo<\/span>/
+    end
+  end
 end
