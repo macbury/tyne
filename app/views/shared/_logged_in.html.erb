@@ -1,1 +1,9 @@
-<p>Welcome <%= current_user.name %> [<%= link_to "Logout", logout_path %>]
+<div id="user-popup">
+  <div class="user-link"><%= link_to_function "Welcome #{current_user.name}", "popup()" %></div>
+  <div class="dropdown">
+    <ul>
+      <li><%= link_to "Profile", profile_path %></li>
+      <li><%= link_to "Logout", logout_path %></li>
+    </ul>
+  </div>
+</div>

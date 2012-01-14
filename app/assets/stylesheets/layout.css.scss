@@ -1,3 +1,4 @@
+@import "compass/css3";
 $base: #3376D7;
 
 * {
@@ -50,8 +51,43 @@ body {
     width: 50%;
     text-align: right;
 
-    p {
-      padding: 10px;
+    #user-popup {
+      margin-right: 20px;
+      margin-top: 20px;
+      display: inline-block;
+    }
+
+    .user-link {
+      padding: 5px;
+      min-width: 100px;
+      display: inline;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 40px;
+      right: 20px;
+      background-color: white;
+      border: 1px solid #555555;
+      min-width: 200px;
+      @include border-radius(4px);
+
+      li {
+        list-style: none;
+        text-align: left;
+
+
+        a {
+          display: block;
+          padding: 3px;
+
+          &:hover {
+            background-color: #eeeeee;
+            text-decoration: none;
+          }
+        }
+      }
     }
   }
 }
@@ -112,8 +148,4 @@ a {
 a:hover {
   color: darken($base, 10%);
   text-decoration: underline;
-}
-
-ul {
-  margin-left: 20px;
 }

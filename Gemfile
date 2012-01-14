@@ -37,6 +37,7 @@ gem 'jquery-rails'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 group :test, :development do
   gem "rspec-rails", "~> 2.6"
+  gem "guard-rspec"
   gem "shoulda-matchers"
   gem 'pry'
   gem 'capybara'

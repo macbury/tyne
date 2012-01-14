@@ -5,7 +5,7 @@ describe TicketsController do
   describe "not_logged_in" do
     it "should redirect to login page" do
       get :index
-      subject.response.should redirect_to(login_path)
+      response.should redirect_to(login_path)
     end
   end
 
