@@ -2,14 +2,58 @@
 
 $base: #3376D7;
 
-#tickets {
+div.tickets {
   width: 100%;
   .ticket {
+    float: left;
+    width: 100px;
+    height: 100px;
     @include box-shadow( rgba(0, 0, 0, 0.2) 0 1px 10px);
     border: 1px solid lighten(#cccccc, 10%);
     background-color: lighten(#cccccc, 20%);
-    margin-bottom: 10px;
+    margin: 20px 20px 0px 0px;
     padding: 5px;
+
+    .id {
+      display: block;
+      font-weight: bold;
+    }
+
+    a {
+      color: black;
+    }
+
+    &.feature {
+      background-color: #A8E4A0;
+    }
+    &.bug {
+      background-color: #FFAACC;
+    }
+    &.enhancement {
+      background-color: #9ACEEB;
+    }
+    &.task {
+      background-color: #FFFF99;
+    }
+  }
+}
+
+table.tickets {
+  with: 100%;
+  margin-top: 10px;
+
+  thead tr th {
+    border-bottom: 1px solid #cccccc;
+    text-align: left;
+    padding-left: 3px;
+  }
+
+  tbody tr td {
+    padding: 3px;
+  }
+
+  tbody tr.even td {
+    background-color: #efefef;
   }
 }
 

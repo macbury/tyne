@@ -2,26 +2,38 @@
   <h2>Sidebar</h2>
 <% end %>
 
-<div id="tickets">
-  <p><%= @tickets.count %> tickets found for <%= link_to "all projects", projects_path %>:</p>
-  <br />
-<% @tickets.each do |ticket| %>
-  <div class="ticket" data-id="<%= ticket.id %>">
-    <div class="header">
-      <span class="id"><%= link_to "#{ticket.project.abbreviation}-#{ticket.id}", ticket_path(ticket) %></span>
-      <span class="title"><%= link_to ticket.title, ticket_path(ticket) %></span>
-      <span class="grayed"><%= textile_to_html(trim(ticket.description, 3)) %></span>
-    </div>
-
-    <div class="bottomline">
-      <span class="comment-count comment-count-<%= ticket.comments.count %>" title="<%= ticket.comments.count %> comments"><%= ticket.comments.count %></span>
-      <%= render :partial => "tags", :locals => { :ticket => ticket } %>
-    </div>
-  </div>
-<% end %>
+<%= link_to "Card view", card_tickets_path %>
 
 <% if @tickets.empty? %>
   <p>Congratulations, you don't have any bugs.</p>
+<% else %>
+  <p><%= @tickets.count %> tickets found for <%= link_to "all projects", projects_path %>:</p>
+  <table class="tickets" cellspacing="0">
+    <thead>
+      <tr>
+        <th></th>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Due</th>
+        <th>Type</th>
+        <th>State</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @tickets.each do |ticket| %>
+        <tr data-id="<%= ticket.id %>" class="<%= cycle('odd', 'even') %>">
+          <td>
+            <span class="comment-count comment-count-<%= ticket.comments.count %>" title="<%= ticket.comments.count %> comments"><%= ticket.comments.count %></span>
+          </td>
+          <td><%= link_to "#{ticket.project.abbreviation}-#{ticket.id}", ticket_path(ticket) %></td>
+          <td><%= link_to ticket.title, ticket_path(ticket) %></td>
+          <td><%= textile_to_html(trim(ticket.description, 1)) %></td>
+          <td><%= due_tag(ticket.due_date) if ticket.due_date %></td>
+          <td><%= type_tag(ticket.ticket_type) if ticket.ticket_type %></td>
+          <td><%= state_tag(ticket) %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
 <% end %>
-
-</div>

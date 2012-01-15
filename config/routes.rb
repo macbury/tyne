@@ -2,6 +2,9 @@ Tyne::Application.routes.draw do
   resources :projects
 
   resources :tickets do
+    collection do
+      get "card"
+    end
     resources :comments
   end
 

@@ -1,0 +1,20 @@
+
+<% content_for :sidebar do %>
+  <h2>Sidebar</h2>
+<% end %>
+
+<%= link_to "List view", tickets_path %>
+
+<% if @tickets.empty? %>
+  <p>Congratulations, you don't have any bugs.</p>
+<% else %>
+  <p><%= @tickets.count %> tickets found for <%= link_to "all projects", projects_path %>:</p>
+  <div class="tickets">
+    <% @tickets.each do |ticket| %>
+      <div class="ticket <%= ticket.ticket_type.name.downcase %>" data-id="<%= ticket.id %>">
+        <span class="id"><%= link_to "#{ticket.project.abbreviation}-#{ticket.id}", ticket_path(ticket) %></span>
+        <span class="title"><%= link_to ticket.title, ticket_path(ticket) %></span>
+      </div>
+    <% end %>
+  </div>
+<% end %>

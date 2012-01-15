@@ -29,4 +29,8 @@ class TicketsController < InheritedResources::Base
       failure.html { @ticket = params[:ticket] }
     end
   end
+
+  def card
+    @tickets = Ticket.not_completed
+  end
 end
