@@ -28,6 +28,14 @@ describe TicketsController do
       end
     end
 
+    describe "GET card" do
+      it "assigns all tickets as @tickets" do
+        ticket = Ticket.create! valid_attributes
+        get :card
+        assigns(:tickets).should eq([ticket])
+      end
+    end
+
     describe "GET show" do
       it "assigns the requested ticket as @ticket" do
         ticket = Ticket.create! valid_attributes

@@ -20,6 +20,6 @@ describe "tickets/index.html.erb" do
   it "renders a list of tickets" do
     render
 
-    rendered.should have_selector "div#tickets"
+    rendered.should have_selector ".tickets"
   end
 end
