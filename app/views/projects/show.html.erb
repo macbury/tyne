@@ -2,7 +2,7 @@
   <div class="highlight headline top">
     <span class="identifier"><%= "#{@project.abbreviation}" %></span>
     <span class="title"><%= @project.name %></span>
-    <span class="actions"><%= link_to "Edit", edit_project_path(@project), :class => "button" %></span>
+    <span class="actions"><%= link_to t("edit"), edit_project_path(@project), :class => "button" %></span>
   </div>
   <div class="body">
     <p><%= textile_to_html(@project.description) %></p>

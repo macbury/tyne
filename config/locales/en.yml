@@ -2,6 +2,36 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  authentication:
+    new_provider: "You can now login using %{provider} too!"
+    logged_in: "Hi %{username}! You've successfully logged in."
+    logout: "Signed out!"
+    not_allowed: "Sorry, but you didn't allow access to our app!"
+    login_first: "Sorry, but you have to login first."
+    sign_in: "Sign in with Google"
+    profile: "Change profile"
+    logout: "Logout from Tyne"
+    login: "Login"
+
+  comments:
+    create: "Your comment has been saved."
+    failure: "Could not save your comment, sorry..."
+
+  tickets:
+    found: "%{tickets} found for %{projects}"
+
+  projects:
+    all: "all projects"
+    new: "New project"
+
+  columns:
+    id: "ID"
+    title: "Title"
+    description: "Description"
+    due: "Due"
+    type: "Type"
+    state: "State"
+
   page:
     info:
       tickets:
@@ -9,9 +39,41 @@ en:
         create: "Create a new ticket"
         new: "Create a new ticket"
         edit: "Edit an existing new ticket"
+        show: "Ticket details"
+      sessions:
+        new: "Login to the application"
+      projects:
+        index: "Projects"
+        new: "Create a project"
+        show: "Project details"
+        edit: "Update your project"
     description:
       tickets:
         index: "Displays the list of all of your tickets."
         new: "Raise a new ticket for the current project."
         create: "Raise a new ticket for the current project."
         edit: "Change the details for an existing ticket."
+        show: "Displays an overview for the given ticket."
+      sessions:
+        new: "Choose your provider to login to the application"
+      projects:
+        index: "Displays the of all your projects"
+        new: "Create a new project"
+        show: "Displays your project details"
+        edit: "Change your project details"
+  errors:
+    prohibited: "{errors} prohibited this {object} from being saved:"
+
+  markup_enabled: "Markdown markup is enabled"
+  copyright: "Copyright 2011 Tobias Haar."
+  rights_reserved: "All rights reserved."
+  welcome: "Welcome"
+  edit: "Edit"
+
+  menu:
+    tickets: "Tickets"
+    new_item: "New item"
+    projects: "Projects"
+
+  form:
+    prompt: "Please choose"

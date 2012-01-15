@@ -1,6 +1,6 @@
 <div class="projects show box">
   <div class="highlight headline top">
-    <span class="actions"><%= link_to 'New Project', new_project_path, :class => "button" %></span>
+    <span class="actions"><%= link_to t('projects.new'), new_project_path, :class => "button" %></span>
   </div>
   <% @projects.each do |project| %>
     <div id="project-<%= project.id %>" class="project details">

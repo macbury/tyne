@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
 
   def require_login
     unless current_user
-      flash[:warning] = "Sorry, but you have to login first."
+      flash[:warning] = I18n.t("authentication.login_first")
 
       redirect_to login_path
     end

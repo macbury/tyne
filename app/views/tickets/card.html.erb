@@ -1,14 +1,13 @@
-
 <% content_for :sidebar do %>
   <h2>Sidebar</h2>
 <% end %>
 
-<%= link_to "List view", tickets_path %>
+<%= link_to t("tickets.list_view"), tickets_path %>
 
 <% if @tickets.empty? %>
-  <p>Congratulations, you don't have any bugs.</p>
+  <p><%= t("tickets.none") %></p>
 <% else %>
-  <p><%= @tickets.count %> tickets found for <%= link_to "all projects", projects_path %>:</p>
+  <p><%= t("tickets.found", :tickets => pluralize(@tickets.count, "ticket"), :projects => link_to(t("projects.all"), projects_path)).html_safe %></p>
   <div class="tickets">
     <% @tickets.each do |ticket| %>
       <div class="ticket <%= ticket.ticket_type.name.downcase %>" data-id="<%= ticket.id %>">

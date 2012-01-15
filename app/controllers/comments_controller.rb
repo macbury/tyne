@@ -8,7 +8,7 @@ class CommentsController < InheritedResources::Base
 
     create! do |success, failure|
       success.html do
-        redirect_to ticket_path(@comment.ticket), :notice => "Your comment has been saved."
+        redirect_to ticket_path(@comment.ticket), :notice => I18n.t("comments.create")
       end
 
       failure.html do
@@ -16,7 +16,7 @@ class CommentsController < InheritedResources::Base
         url = tickets_path
         url = ticket_path(@comment.ticket) if @comment.ticket
 
-        flash[:error] = "Could not save your comment, sorry..."
+        flash[:error] = I18n.t("comments.failure")
 
         redirect_to url
       end
