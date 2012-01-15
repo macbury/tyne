@@ -28,7 +28,7 @@
           </td>
           <td><%= link_to "#{ticket.project.abbreviation}-#{ticket.id}", ticket_path(ticket) %></td>
           <td><%= link_to ticket.title, ticket_path(ticket) %></td>
-          <td><%= textile_to_html(trim(ticket.description, 1)) %></td>
+          <td><%= markup_to_html(trim(ticket.description, 1)) %></td>
           <td><%= due_tag(ticket.due_date) if ticket.due_date %></td>
           <td><%= type_tag(ticket.ticket_type) if ticket.ticket_type %></td>
           <td><%= state_tag(ticket) %></td>

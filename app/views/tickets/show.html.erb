@@ -9,7 +9,7 @@
         <span class="actions"><%= link_to t("edit"), edit_ticket_path(@ticket), :class => "button" %></span>
       </div>
       <div class="body">
-        <p><%= textile_to_html(@ticket.description) %></p>
+        <p><%= markup_to_html(@ticket.description) %></p>
       </div>
 
       <div class="highlight tag-list bottom">
@@ -30,7 +30,7 @@
           </div>
         </div>
         <div class="body">
-          <%= textile_to_html(comment.body) %>
+          <%= markup_to_html(comment.body) %>
         </div>
       </div>
     </div>

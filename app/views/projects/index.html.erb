@@ -10,7 +10,7 @@
       <span class="name">
         <%= link_to project.name, project_path(project) %>
       </span>
-      <span class="grayed"><%= textile_to_html(trim(project.description, 3)) %></span>
+      <span class="grayed"><%= markup_to_html(trim(project.description, 3)) %></span>
     </div>
   <% end %>
   <div class="highlight">

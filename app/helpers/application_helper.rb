@@ -14,8 +14,8 @@ module ApplicationHelper
     I18n.t("page.description.#{params[:controller]}.#{params[:action]}")
   end
 
-  def textile_to_html(textile)
-    RedCloth.new(textile).to_html.html_safe
+  def markup_to_html(markup)
+    Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink => true, :space_after_headers => true).render(markup).html_safe
   end
 
   def trim(text, after_lines)
