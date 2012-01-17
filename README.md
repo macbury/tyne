@@ -4,6 +4,8 @@
 
 Tyne is a simple Ruby and JavaScript based ticket system which allows you to easy track all your tickets (not yet, but soon :)).
 
+![travis-ci](https://secure.travis-ci.org/Tobscher/tyne.png)
+
 ## Installation
 
 Simply clone this repository and run the following commands:
